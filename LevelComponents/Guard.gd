@@ -193,10 +193,11 @@ func _on_chase_timout():
 
 
 static func is_chasable(body : Node2D):
-	var signals = body.get_signal_list()
-	for sig_obj in signals:
-		if sig_obj.name == "rescued":
-			return true
+	if body:
+		var signals = body.get_signal_list()
+		for sig_obj in signals:
+			if sig_obj.name == "rescued":
+				return true
 	return false
 
 

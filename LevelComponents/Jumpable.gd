@@ -163,10 +163,11 @@ func reset_jump_cooloff(timer : Timer):
 
 
 static func is_jumpable(body : PhysicsBody2D):
-	var signals = body.get_signal_list()
-	for sig_obj in signals:
-		if sig_obj.name == "jumped":
-			return true
+	if body:
+		var signals = body.get_signal_list()
+		for sig_obj in signals:
+			if sig_obj.name == "jumped":
+				return true
 	return false
 
 

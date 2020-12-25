@@ -27,8 +27,10 @@ static func is_interactable(area : Area2D):
 
 
 func _on_InteractArea_body_entered(body : PhysicsBody2D):
-	body.emit_signal("enter_interaction_region", self)
+	if body:
+		body.emit_signal("enter_interaction_region", self)
 
 
 func _on_InteractArea_body_exited(body : PhysicsBody2D):
-	body.emit_signal("exit_interaction_region", self)
+	if body:
+		body.emit_signal("exit_interaction_region", self)
